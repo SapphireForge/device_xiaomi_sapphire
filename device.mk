@@ -112,6 +112,9 @@ PRODUCT_PACKAGES += \
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+# RemovePackages 
+PRODUCT_PACKAGES += RemovePackages
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
