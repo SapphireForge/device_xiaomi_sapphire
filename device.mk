@@ -668,40 +668,30 @@ PRODUCT_PACKAGES += \
 #------------------------------------------------------------------------------------------------#
 # ART - Builds de debug
 #------------------------------------------------------------------------------------------------#
-# Compila o ART do aparelho só na versão release
+# ==========================================
+# ART - BUILD RELEASE
+# ==========================================
 ART_BUILD_TARGET_NDEBUG := true
 ART_BUILD_TARGET_DEBUG := false
 
-# Compila o ART das ferramentas do PC só na versão release
 ART_BUILD_HOST_NDEBUG := true
 ART_BUILD_HOST_DEBUG := false
 
-# Não inclui o libartd (ART de debug) na imagem
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-
-# Usa o dex2oat release, que compila mais rápido
 USE_DEX2OAT_DEBUG := false
 
-#------------------------------------------------------------------------------------------------#
-# Java - Informações de debug
-#------------------------------------------------------------------------------------------------#
-# Remove as tabelas de variáveis locais para reduzir o tamanho da imagem
+# ==========================================
+# JAVA DEBUG INFO
+# ==========================================
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
-#------------------------------------------------------------------------------------------------#
-# Boot image
-#------------------------------------------------------------------------------------------------#
-# Gera a boot image só com as classes do perfil
+# ==========================================
+# BOOT IMAGE
+# ==========================================
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-
-# Perfil genérico do framework, não otimizado para o sapphire
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
 
-#------------------------------------------------------------------------------------------------#
-# Pré-compilação
-#------------------------------------------------------------------------------------------------#
-# Compila todo o system_server no build para o sistema ficar mais responsivo
+# ==========================================
+# SYSTEM SERVER PREOPT
+# ==========================================
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := everything
-
-# Desativado: serve aos módulos do GMS do Google, e o build usa MicroG
-# PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
