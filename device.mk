@@ -663,35 +663,3 @@ PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink \
     firmware_WCNSS_qcom_cfg.ini_symlink \
     firmware_wlanmdsp.mbn_symlink
-    
-# Créditos: mk7x7                                                   
-#------------------------------------------------------------------------------------------------#
-# ART - Builds de debug
-#------------------------------------------------------------------------------------------------#
-# ==========================================
-# ART - BUILD RELEASE
-# ==========================================
-ART_BUILD_TARGET_NDEBUG := true
-ART_BUILD_TARGET_DEBUG := false
-
-ART_BUILD_HOST_NDEBUG := true
-ART_BUILD_HOST_DEBUG := false
-
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-USE_DEX2OAT_DEBUG := false
-
-# ==========================================
-# JAVA DEBUG INFO
-# ==========================================
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-
-# ==========================================
-# BOOT IMAGE
-# ==========================================
-PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
-
-# ==========================================
-# SYSTEM SERVER PREOPT
-# ==========================================
-PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := everything
